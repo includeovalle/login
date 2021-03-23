@@ -4,6 +4,7 @@ const bcrypt		= require('bcrypt');
 const mongoose 		= require("mongoose");
 
 const bodyParser = require("body-parser");
+const User = require('./user')
 
 
 const app = express();
@@ -25,10 +26,9 @@ app.use('/js', express.static(path.join(__dirname, './public/js')))
 //despues se agrega '@localhost/ '
 //y finalmente la bd a la que vamos
 
-const mongo_uri = 'mongodb://usuario:facilito-del1al,4@localhost/Juego'
+const mongo_uri = 'mongodb://usuario1:facilito-del1al,4@localhost/Juego' 
 
-
-mongoose.connect(mongo_uri,{ useNewUrlParser: true, useUnifiedTopology: true },(err)=>{
+mongoose.connect(mongo_uri,{useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true },(err)=>{
 		if (err) {
 			throw err;
 		} else {
@@ -37,9 +37,32 @@ mongoose.connect(mongo_uri,{ useNewUrlParser: true, useUnifiedTopology: true },(
 
 });
 
-app.get('/',(req, res)=>{
 
-});
+
+
+app.post('/register',(req, res)=>{
+	const {username, correo, password} = req.body;
+
+	const user = new User({username, correo, password});
+
+	user.save(err =>{
+	if (err){
+	res.status(500).send('ERROR al registrar usuario');
+			throw err;
+	}else{
+	res.status(200).send('Usuario registrado correctamente')	
+	}
+	})
+})
+
+
+
+
+
+
+
+
+
 
 var PORT= process.env.PORT || 3000;
 app.listen(PORT,()=>{ 

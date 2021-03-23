@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Bienvenido viajero estas en casa</title>
+		<link rel="stylesheet" href="./css/idecss.css">
+	</head>
+	<body>
+		<div class="logo">
+			<span></span><span></span><span></span>
+			<p>inserta aqui tu logo</p>	
+		</div>
+
+		<!-- ================
+	  menu inferior, abajo
+	  ====================== -->
+
+	  <div class="contenAbajo">
+		  <span></span><span></span><span></span>
+		  <div class="animacionAbajo"> 
+
+
+
+			  <div class="menu_abajo">
+				  <a href="www.miw.com/contacto">
+					  <span></span>
+					  Contacto
+				  </a> 
+			  </div>
+
+
+
+			  <div class="menu_abajo"> 
+				  <a href="www.miw.com/foro/preguntasfrecuentes">
+					  <span></span>
+					  Preguntas Frecuentes
+				  </a> 
+			  </div>		 
+
+
+
+			  <div class="menu_abajo"> 
+				  <a href="www.miw.com/foro/terminosycondiciones">
+					  <span></span>
+					  Condiciones de Uso
+				  </a>
+			  </div>		 
+
+		  </div>
+	  </div>	 	
+	  <!-- ================
+	   GIF
+	   ====================== -->
+	   <div class="gif">
+		   <p>aca va el gif</p>
+
+	   </div>
+	   <!-- ================
+	    FORMULARIO
+	    ====================== -->
+	    <div class="containerForm">
+		    <ul>
+			    <li id="entrar" onclick="index()">Entrar</li>
+			    <li id= "regis">Registrar</li>
+		    </ul>
+		    <br>
+		    <div class="tab-content">
+			    <div id="containerEntrar">
+				    <form class="formulario" method="POST" action="/authenticate">
+					    <label> Nombre de usuario/correo-Electrónico
+						    <input type="text" class="form-control" nombre="nombre-usuario" placeholder="Introduce tu usuario">  
+						    <label> Contraseña 
+							    <input type="password" class="form-control" nombre"contraseña" placeholder="Ingresa tu contraseña">
+							    <input type="submit" class="entrarIndex" value="Entrar">
+				    </form>
+			    </div>
+
+			    <div id="containerRegistro" >
+				    <form class="formulario"action="/register" method="POST">
+					    <label> Nombre de usuario
+						<input type="text" class="form-control" name="username"id ="username" placeholder="Introduce tu usuario"> 
+
+					    <label>Correo Electrónico 
+						<input type="text" class="form-control" name="correo"id ="correo" placeholder="Introduce tu correo"> 
+						<label> Contraseña 
+						 <input type="password" class="form-control" name="password" id ="password" placeholder="Ingresa tu contraseña" > 
+							    <input type="submit" class="registrarIndex" value="Registrar">
+				    </form>
+			    </div>
+		    </div>
+	    </div>
+	    <div>
+
+	    </div>
+	</body>
+	<script src="./js/main.js">
+	</script>
+</html>
